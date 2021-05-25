@@ -1,0 +1,69 @@
+#%RAML 1.0
+title: Payroll details
+version: 1.0
+  
+/Payroll:
+  get:
+    responses: 
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                "employeeID": 1001,
+                "employeename": "Kiruba"
+                "age": 30
+                "designation": "Engineer"
+                "department": "India"
+                "salary": 20000
+                "address": "No:23,Ganapathypuram 1st street"
+                "Created_TS": 31-03-2020 11:00:00
+                "Updated_TS": 01-04-2020 11:00:00
+                }  
+  post: 
+    responses:
+      200:
+        body:
+          application/xml:
+            example: |
+              {
+              "employeeID": 1002,
+              "employeename": "Kanth"
+              "age": 31
+              "designation": "Engineer"
+              "department": "India"
+              "salary": 20000
+              "address": "No:23,Silver Spring apts"
+              "Created_TS": 31-03-2020 11:00:00
+              "Updated_TS": 01-04-2020 11:00:00
+              "Operation" : "Insert"
+              }
+          
+  put:
+   body: 
+        application/xml:
+          example: |
+            {
+                "employeeID": 1002,
+                "employeename": "Kanth"
+                "age": 30
+                "designation": "Engineer"
+                "department": "India"
+                "salary": 20000
+                "address": "No:23,Silver Spring apts"
+                "Created_TS": 31-03-2020 11:00:00
+                "Updated_TS": 01-04-2020 11:00:00
+                "Operation" : "Update"
+           
+             } 
+  /Payrolldetails/{EmployeeId}:   
+  delete:
+    responses:
+        200:
+          body:
+            application/x:
+              example:
+                message: payroll deleted
+     
+    
+
